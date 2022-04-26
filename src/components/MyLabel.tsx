@@ -19,18 +19,25 @@ export interface IProps{
      */
     color?: 'primary' | 'secondary' | 'tertiary';
     /**
-     * To Capitalize the letters
+     * To Change the color. This overrides the color property
      */
     fontColor?: string;
+    /**
+     * To Change the background color. This overrides the color property
+     */
+    backgroundColor?: string;
 
 }
 
-export const MyLabel = ( {label = 'No Label', size='normal', color= 'primary', allCaps = false, fontColor} : IProps ) => {
+export const MyLabel = ( {label = 'No Label', size='normal', color= 'primary', allCaps = false, fontColor, backgroundColor='transparent'} : IProps ) => {
     
     return (
         <span 
             className={`label ${ size } text-${color}` } 
-            style={{color: fontColor}}
+            style={{
+                color: fontColor,
+                backgroundColor: backgroundColor
+            }}
         >
 
             { (allCaps) ? label.toUpperCase() : label }
