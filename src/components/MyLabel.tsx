@@ -45,3 +45,5 @@ export const MyLabel = ( {label = 'No Label', size='normal', color= 'primary', a
         </span>
     )
 }
+
+export default MyLabel;
